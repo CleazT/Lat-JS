@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Pilih Link</h1>
+    <form action="">
+        <select name="myLink" id="myLink" onchange="pilihLink()">
+            <option value="">Pilih Link</option>
+            <option value="https://github.com/CleazT?tab=overview&from=2024-01-01&to=2024-01-30">GitHub</option>
+            <option value="https://www.instagram.com/dzakgun1601/">Instagram</option>
+        </select>
+    </form>
+
+    <script>
+        function pilihLink() {
+            var linkTerpilih = document.getElementById('myLink').value;
+
+            document.location.href = linkTerpilih;
+        }
+    </script>
+</body>
+</html>
