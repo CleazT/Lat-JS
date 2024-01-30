@@ -12,7 +12,9 @@ if (pilihanKomputer < 0.34) {
 function getResult(pilihanUser, pilihanKomputer) {
     if (pilihanUser === pilihanKomputer) {
         return "Hasil seri!";
-    } else if (
+    } else if (pilihanUser != "Gajah", "Orang", "Semut") {
+        return "Anda tidak memilih apa apa.."
+    } else if(
         (pilihanUser === "Gajah" && pilihanKomputer === "Orang") ||
         (pilihanUser === "Orang" && pilihanKomputer === "Semut") ||
         (pilihanUser === "Semut" && pilihanKomputer === "Gajah")
