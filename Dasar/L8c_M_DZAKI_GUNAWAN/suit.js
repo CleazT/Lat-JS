@@ -1,40 +1,34 @@
 let pilihanUser = prompt("Pilih antara Gajah, Orang, atau Semut");
-
 let pilihanKomputer = Math.random();
 
 if (pilihanKomputer < 0.34) {
     pilihanKomputer = "Gajah";
-} else if(pilihanKomputer <= 0.67) {
+} else if (pilihanKomputer <= 0.67) {
     pilihanKomputer = "Orang";
 } else {
     pilihanKomputer = "Semut";
 }
 
-let hasil = function(pilihanKomputer, pilihanUser){
-    if((pilihanKomputer == "Gajah") && (pilihanUser == "Gajah")){
-        hasil = "Seri"
-    } else if((pilihanKomputer == "Gajah") && (pilihanUser == "Orang")){
-        hasil = "Kalah"
-    } else if((pilihanKomputer == "Gajah") && (pilihanUser == "Semut")){
-        hasil = "Menang"
-    } else if((pilihanKomputer == "Orang") && (pilihanUser == "Gajah")){
-        hasil = "Menang"
-    } else if((pilihanKomputer == "Orang") && (pilihanUser == "Orang")){
-        hasil = "Seri"
-    } else if((pilihanKomputer == "Orang") && (pilihanUser == "Semut")){
-        hasil = "Kalah"
-    } else if((pilihanKomputer == "Semut") && (pilihanUser == "Gajah")){
-        hasil = "Kalah"
-    } else if((pilihanKomputer == "Semut") && (pilihanUser == "Orang")){
-        hasil = "Menang"
-    } else if((pilihanKomputer == "Semut") && (pilihanUser == "Semut")){
-        hasil = "Seri"
+function getResult(pilihanUser, pilihanKomputer) {
+    if (pilihanUser === pilihanKomputer) {
+        return "Hasil seri!";
+    } else if (
+        (pilihanUser === "Gajah" && pilihanKomputer === "Orang") ||
+        (pilihanUser === "Orang" && pilihanKomputer === "Semut") ||
+        (pilihanUser === "Semut" && pilihanKomputer === "Gajah")
+    ) {
+        return "Anda menang!";
     } else {
-        hasil = "Kamu tidak memilih apa apa"
+        return "Anda kalah!";
     }
 }
 
-alert("Komputer mengeluarkan " + pilihanKomputer + "\nKamu mengeluarkan " + pilihanUser + "Hasil " + hasil)
+alert("Komputer memilih: " + pilihanKomputer);
+
+let hasil = getResult(pilihanUser, pilihanKomputer);
+alert(hasil);
+
+//Dibawah ini adalah cara if else rendahan :skull:
 
 // if ((pilihanKomputer == "Gajah") && (pilihanUser == "Gajah")){
 //     alert("Komputer mengeluarkan " + pilihanKomputer + "\ndan kamu mengeluarkan " + pilihanUser + "\nSeri");

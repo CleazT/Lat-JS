@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM4</title>
+</head>
+<body>
+    <p>Teks yang anda masukan : <b id="textLama">teks lama</b></p>
+    <p>Masukan teks baru :</p>
+    <input type="text" id="userInput" placeholder="masukan teks.."> <br>
+    <input type="button" onclick="ubahText()" value="ubah text">
+
+    <script>
+        function ubahText() {
+
+            var userInput = document.getElementById('userInput').value;
+            var textBaru = "<span style='color: red'>" + userInput + "</span>";
+
+            document.getElementById('textLama').innerHTML = textBaru;
+        }
+    </script>
+</body>
+</html>
